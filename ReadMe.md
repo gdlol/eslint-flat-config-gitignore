@@ -1,9 +1,14 @@
 # eslint-flat-config-gitignore
+
 ESLint flat config for ignoring files listed in .gitignore.
 
 [![npm](https://img.shields.io/npm/v/eslint-flat-config-gitignore)](https://www.npmjs.com/package/eslint-flat-config-gitignore)
+[![AppVeyor Build](https://img.shields.io/appveyor/build/gdlol/eslint-flat-config-gitignore)](https://ci.appveyor.com/project/gdlol/eslint-flat-config-gitignore)
+[![Codecov](https://img.shields.io/codecov/c/github/gdlol/eslint-flat-config-gitignore)](https://app.codecov.io/gh/gdlol/eslint-flat-config-gitignore)
+[![NPM](https://img.shields.io/npm/l/eslint-flat-config-gitignore)](LICENSE)
 
 # Usage
+
 ```ts
 import path from "node:path";
 import { fileURLToPath } from "node:url";

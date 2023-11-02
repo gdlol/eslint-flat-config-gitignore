@@ -3,9 +3,11 @@
   "enableGlobDot": true,
   "useGitignore": true,
   "words": [
+    "Codecov",
     "devcontainer",
     "devcontainers",
     "execa",
+    "gdlol",
     "memfs",
     "packagejson",
     "pnpmfile",

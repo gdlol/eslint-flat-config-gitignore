@@ -8,4 +8,4 @@ WORKDIR /home/dev
 COPY .env .
 RUN . ./.env && mkdir --parents ${XDG_CONFIG_HOME} ${XDG_CACHE_HOME} ${XDG_DATA_HOME} ${XDG_STATE_HOME} ${WORKSPACE}
 
-RUN npm install --global pnpm@8.10.0
+RUN npm install --global pnpm@8.10.2

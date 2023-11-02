@@ -45,6 +45,7 @@ test("default", async () => {
   expect(await eslint.isPathIgnored("/path/to/project/package/.config/file.js")).toBe(false);
   expect(await eslint.isPathIgnored("/path/to/project/package/.config/eslint/.eslintrc.js")).toBe(false);
   expect(await eslint.isPathIgnored("/path/to/project/package/.git/file.js")).toBe(false);
+  expect(await eslint.isPathIgnored("/path/to/project/package/lib/.file.js")).toBe(false);
 });
 
 test("gitignore", async () => {
@@ -69,4 +70,5 @@ test("gitignore", async () => {
   expect(await eslint.isPathIgnored("/path/to/project/package/.config/file.js")).toBe(false);
   expect(await eslint.isPathIgnored("/path/to/project/package/.config/eslint/.eslintrc.js")).toBe(false);
   expect(await eslint.isPathIgnored("/path/to/project/package/.git/file.js")).toBe(true);
+  expect(await eslint.isPathIgnored("/path/to/project/package/lib/.file.js")).toBe(true);
 });
