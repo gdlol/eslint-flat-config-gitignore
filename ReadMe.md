@@ -1,7 +1,7 @@
 # eslint-flat-config-gitignore
 ESLint flat config for ignoring files listed in .gitignore.
 
-![npm](https://img.shields.io/npm/v/eslint-flat-config-gitignore)
+[![npm](https://img.shields.io/npm/v/eslint-flat-config-gitignore)](https://www.npmjs.com/package/eslint-flat-config-gitignore)
 
 # Usage
 ```ts
