@@ -1,4 +1,4 @@
-import { $$ } from "scripts/shell.js";
+import { $$ } from "@/scripts/shell.js";
 
 export const syncpackLint = () => $$`syncpack lint-mismatches`;
 

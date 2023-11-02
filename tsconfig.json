@@ -3,6 +3,8 @@
   "include": ["vite.config.ts", "scripts/"],
   "compilerOptions": {
     "noEmit": true,
-    "baseUrl": "."
+    "paths": {
+      "@/*": ["./*"]
+    }
   }
 }

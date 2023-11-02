@@ -1,7 +1,7 @@
 import path from "node:path";
 
-import { projectRoot, workspace } from "scripts/project.js";
-import { $$ } from "scripts/shell.js";
+import { projectRoot, workspace } from "@/scripts/project.js";
+import { $$ } from "@/scripts/shell.js";
 
 const tsConfigPath = path.resolve(projectRoot, ".config/eslint/tsconfig.json");
 

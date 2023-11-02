@@ -1,5 +1,5 @@
-import { projectRoot } from "scripts/project.js";
-import { $$ } from "scripts/shell.js";
+import { projectRoot } from "@/scripts/project.js";
+import { $$ } from "@/scripts/shell.js";
 
 export const prettierCheck = () => $$`prettier --check ${projectRoot}`;
 

@@ -4,14 +4,14 @@ import path from "node:path";
 
 import git from "isomorphic-git";
 import * as prettier from "prettier";
-import { projectRoot } from "scripts/project.js";
-import { $$ } from "scripts/shell.js";
 import semverRsort from "semver/functions/rsort.js";
 import type { PackageJson } from "type-fest";
 
-import prettierOptions from "../../.config/prettier/.prettierrc.json";
-import pkg from "../../eslint-flat-config-gitignore/package.json";
-import { license } from "../../package.json";
+import prettierOptions from "@/.config/prettier/.prettierrc.json";
+import pkg from "@/eslint-flat-config-gitignore/package.json";
+import { license } from "@/package.json";
+import { projectRoot } from "@/scripts/project.js";
+import { $$ } from "@/scripts/shell.js";
 
 const dist = path.resolve(projectRoot, pkg.name, "dist");
 
