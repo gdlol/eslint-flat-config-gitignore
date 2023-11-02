@@ -1,0 +1,29 @@
+services:
+  devcontainer:
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    volumes:
+      - XDG_CONFIG_HOME:${XDG_CONFIG_HOME}
+      - XDG_CACHE_HOME:${XDG_CACHE_HOME}
+      - XDG_DATA_HOME:${XDG_DATA_HOME}
+      - XDG_STATE_HOME:${XDG_STATE_HOME}
+      - WORKSPACE:${WORKSPACE}
+      - ..:${WORKSPACE}/project
+      - ../.config/cspell/cspell.json:${WORKSPACE}/cspell.json
+      - ../.config/git:${XDG_CONFIG_HOME}/git
+      - ../.config/git/attributes:${WORKSPACE}/.gitattributes
+      - ../.config/git/ignore:${WORKSPACE}/.gitignore
+      - ../.config/pnpm:${XDG_CONFIG_HOME}/pnpm
+      - ../.config/prettier/.prettierrc.json:${WORKSPACE}/.prettierrc.json
+      - ../.config/workspace/pnpm-workspace.yaml:${WORKSPACE}/pnpm-workspace.yaml
+      - ../.config/workspace/package.json:${WORKSPACE}/package.json
+volumes:
+  XDG_CONFIG_HOME:
+  XDG_CACHE_HOME:
+  XDG_DATA_HOME:
+  XDG_STATE_HOME:
+  WORKSPACE:

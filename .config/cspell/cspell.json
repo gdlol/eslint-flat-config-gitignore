@@ -1,0 +1,16 @@
+{
+  "version": "0.2",
+  "enableGlobDot": true,
+  "useGitignore": true,
+  "words": [
+    "devcontainer",
+    "devcontainers",
+    "execa",
+    "memfs",
+    "packagejson",
+    "pnpmfile",
+    "rsort",
+    "syncpack",
+    "usermod"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "eslint-flat-config-gitignore",
+  "description": "ESLint flat config for ignoring files listed in .gitignore",
+  "keywords": [
+    "eslint",
+    "flat",
+    "config",
+    "ignore",
+    "gitignore"
+  ],
+  "type": "module",
+  "exports": {
+    "development": {
+      "import": "./src/index.ts"
+    },
+    "default": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "ignore": "^5.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.10"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
