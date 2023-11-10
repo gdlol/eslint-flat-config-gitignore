@@ -47,13 +47,12 @@ export default [
       "import/no-extraneous-dependencies": "error",
       "simple-import-sort/exports": "error",
       "simple-import-sort/imports": "error",
-      "unicorn/prefer-module": "error",
       "unicorn/prefer-node-protocol": "error",
     },
   },
   {
-    files: ["**/*.cts"],
-    rules: { "unicorn/prefer-module": "off" },
+    files: ["**/*.{ts,tsx,mts}"],
+    rules: { "unicorn/prefer-module": "error" },
   },
   prettier,
 ] satisfies Linter.FlatConfig[];
