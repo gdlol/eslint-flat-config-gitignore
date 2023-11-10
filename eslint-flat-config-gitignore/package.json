@@ -22,7 +22,7 @@
     "ignore": "^5.2.4"
   },
   "devDependencies": {
-    "@types/node": "^20.8.10"
+    "@types/node": "^20.9.0"
   },
   "engines": {
     "node": ">=20"
