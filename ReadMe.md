@@ -1,13 +1,17 @@
 # eslint-flat-config-gitignore
 
-[![npm](https://img.shields.io/npm/v/eslint-flat-config-gitignore)](https://www.npmjs.com/package/eslint-flat-config-gitignore)
-[
-![AppVeyor Build (with branch)](https://img.shields.io/appveyor/build/gdlol/eslint-flat-config-gitignore/main)
-](https://ci.appveyor.com/project/gdlol/eslint-flat-config-gitignore/branch/main)
-[
-![Codecov branch](https://img.shields.io/codecov/c/github/gdlol/eslint-flat-config-gitignore/main)
-](https://app.codecov.io/gh/gdlol/eslint-flat-config-gitignore/tree/main)
-[![NPM](https://img.shields.io/npm/l/eslint-flat-config-gitignore)](LICENSE)
+[NPM Badge]: https://img.shields.io/npm/v/eslint-flat-config-gitignore
+[NPM URL]: https://www.npmjs.com/package/eslint-flat-config-gitignore
+[AppVeyor Badge]: https://img.shields.io/appveyor/build/gdlol/eslint-flat-config-gitignore/main
+[AppVeyor URL]: https://ci.appveyor.com/project/gdlol/eslint-flat-config-gitignore/branch/main
+[Codecov Badge]: https://img.shields.io/codecov/c/github/gdlol/eslint-flat-config-gitignore/main
+[Codecov URL]: https://app.codecov.io/gh/gdlol/eslint-flat-config-gitignore/tree/main
+[License Badge]: https://img.shields.io/github/license/gdlol/eslint-flat-config-gitignore
+
+[![NPM Badge][NPM Badge]][NPM URL]
+[![AppVeyor Badge][AppVeyor Badge]][AppVeyor URL]
+[![Codecov Badge][Codecov Badge]][Codecov URL]
+[![License Badge][License Badge]](LICENSE)
 
 ESLint flat config for ignoring files listed in .gitignore.
 
