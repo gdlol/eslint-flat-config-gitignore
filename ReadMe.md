@@ -6,7 +6,7 @@
 [AppVeyor URL]: https://ci.appveyor.com/project/gdlol/eslint-flat-config-gitignore/branch/main
 [Codecov Badge]: https://img.shields.io/codecov/c/github/gdlol/eslint-flat-config-gitignore/main
 [Codecov URL]: https://app.codecov.io/gh/gdlol/eslint-flat-config-gitignore/tree/main
-[License Badge]: https://img.shields.io/npm/l/eslint-flat-config-gitignore
+[License Badge]: https://img.shields.io/github/license/gdlol/eslint-flat-config-gitignore
 
 [![NPM Badge][NPM Badge]][NPM URL]
 [![AppVeyor Badge][AppVeyor Badge]][AppVeyor URL]
