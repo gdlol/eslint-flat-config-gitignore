@@ -1,4 +1,0 @@
-{
-  "extends": "../typescript/tsconfig.node.json",
-  "include": [".pnpmfile.cts"]
-}
