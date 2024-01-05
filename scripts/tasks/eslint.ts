@@ -1,18 +1,15 @@
 import path from "node:path";
 
-import { projectRoot, workspace } from "@/scripts/project.js";
+import { projectRoot, workspaces } from "@/scripts/project.js";
 import { $$ } from "@/scripts/shell.js";
 
 const tsConfigPath = path.resolve(projectRoot, ".config/eslint/tsconfig.json");
 
-export const eslintSetup = () => $$`tsc --project ${tsConfigPath} --outDir ${workspace}`;
+export const eslintSetup = (watch = false) =>
+  $$`tsc --project ${tsConfigPath} --outDir ${workspaces} ${watch ? ["--watch"] : []}`;
 
-export const eslint = async () => {
-  await eslintSetup();
-  await $$`eslint ${projectRoot}`;
-};
+export const eslintWatch = () => eslintSetup(true);
 
-export const eslintFix = async () => {
-  await eslintSetup();
-  await $$`eslint --fix ${projectRoot}`;
-};
+export const eslint = async () => $$`eslint ${projectRoot}`;
+
+export const eslintFix = async () => $$`eslint --fix ${projectRoot}`;

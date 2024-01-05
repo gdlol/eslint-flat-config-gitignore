@@ -9,6 +9,7 @@
     "execa",
     "gdlol",
     "memfs",
+    "npmjs",
     "packagejson",
     "pnpmfile",
     "rsort",

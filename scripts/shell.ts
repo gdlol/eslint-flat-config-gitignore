@@ -1,5 +1,8 @@
+import type { Options } from "execa";
 import { $ } from "execa";
 
-import { workspace } from "@/scripts/project.js";
+import { workspaces } from "@/scripts/project.js";
 
-export const $$ = $({ stdio: "inherit", verbose: true, cwd: workspace });
+export const shellOptions: Options = { stdio: "inherit", verbose: true, cwd: workspaces };
+
+export const $$ = $(shellOptions);

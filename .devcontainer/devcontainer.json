@@ -4,7 +4,11 @@
   "service": "devcontainer",
   "remoteUser": "dev",
   "overrideCommand": true,
-  "workspaceFolder": "/home/dev/workspace/project",
+  "workspaceFolder": "/workspaces/eslint-flat-config-gitignore",
+  "features": {
+    "ghcr.io/devcontainer-config/features/user-init:1": {},
+    "ghcr.io/devcontainer-config/features/dot-config:1": {}
+  },
   "customizations": {
     "vscode": {
       // spell-checker:ignore dbaeumer esbenp azuretools zixuanchen
@@ -32,12 +36,13 @@
         "cSpell.autoFormatConfigFile": true,
         "cSpell.checkOnlyEnabledFileTypes": false,
         "eslint.experimental.useFlatConfig": true,
-        "eslint.workingDirectories": ["/home/dev/workspace"],
+        "eslint.workingDirectories": ["/workspaces"],
         "typescript.preferences.importModuleSpecifier": "non-relative",
         "typescript.preferences.includePackageJsonAutoImports": "on",
-        "typescript.tsdk": "/home/dev/workspace/node_modules/typescript/lib"
+        "typescript.tsdk": "/workspaces/node_modules/typescript/lib"
       }
     }
   },
-  "onCreateCommand": "pnpm install && pnpm run restore"
+  "onCreateCommand": "pnpm install && pnpm run restore",
+  "postStartCommand": "pnpm watch --detach"
 }

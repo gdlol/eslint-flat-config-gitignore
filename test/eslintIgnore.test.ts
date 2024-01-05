@@ -1,10 +1,8 @@
-import { afterEach } from "node:test";
-
 import dedent from "dedent";
 import { FlatESLint } from "eslint/use-at-your-own-risk";
 import { gitignore } from "eslint-flat-config-gitignore";
 import { vol } from "memfs";
-import { expect, test, vi } from "vitest";
+import { afterEach, expect, test, vi } from "vitest";
 
 const fs = await vi.hoisted(async () => (await import("memfs")).fs);
 vi.mock("node:fs", () => fs);

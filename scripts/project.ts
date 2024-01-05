@@ -5,4 +5,4 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export const projectRoot = path.resolve(__dirname, "..");
 
-export const workspace = path.resolve(projectRoot, "..");
+export const workspaces = path.resolve(projectRoot, "..");

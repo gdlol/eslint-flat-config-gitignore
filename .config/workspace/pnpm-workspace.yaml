@@ -1,3 +1,0 @@
-packages:
-  - "project/**"
-  - "!**/dist/"
