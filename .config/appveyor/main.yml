@@ -10,10 +10,12 @@ build_script:
       devcontainer build --workspace-folder .
 test_script:
   - sh: >-
+      set -e
+
       devcontainer up --workspace-folder .
 
       devcontainer exec --workspace-folder . pnpm lint
 
-      devcontainer exec --workspace-folder --remote-env CI=true . pnpm test
+      devcontainer exec --workspace-folder . --remote-env CI=true pnpm test
 
-      devcontainer exec --workspace-folder --remote-env CODECOV_TOKEN=${CODECOV_TOKEN} . pnpm codecov
+      devcontainer exec --workspace-folder . --remote-env CODECOV_TOKEN=${CODECOV_TOKEN} pnpm codecov
