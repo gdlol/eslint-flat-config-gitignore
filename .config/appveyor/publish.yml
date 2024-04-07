@@ -4,6 +4,8 @@ branches:
     - main
 skip_non_tags: true
 image: Ubuntu2004
+environment:
+  NPM_TOKEN: NPM_TOKEN
 build_script:
   - sh: >-
       set -e
