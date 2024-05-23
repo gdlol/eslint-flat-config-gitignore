@@ -1,14 +1,14 @@
 {
   "type": "module",
   "dependencies": {
-    "dedent": "^1.5.1",
+    "dedent": "^1.5.3",
     "eslint": "^8.57.0",
-    "eslint-flat-config-gitignore": "workspace:^",
-    "memfs": "^4.8.1",
-    "vitest": "^1.4.0"
+    "eslint-flat-config-gitignore": "workspace:*",
+    "memfs": "^4.9.2",
+    "vitest": "^1.6.0"
   },
   "devDependencies": {
-    "@types/eslint": "^8.56.7",
-    "@types/node": "^20.12.5"
+    "@types/eslint": "^8.56.10",
+    "@types/node": "^20.12.12"
   }
 }

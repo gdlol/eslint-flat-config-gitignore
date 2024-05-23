@@ -27,6 +27,7 @@ const createIgnoreFunction = async (dirname: string, filename: string) => {
  */
 export const gitignore = async (dirname: string, filename = ".gitignore") => {
   return {
-    ignores: [await createIgnoreFunction(dirname, filename)],
+    // TODO: Explore possible options if this no longer works.
+    ignores: [await createIgnoreFunction(dirname, filename)] as unknown as string[],
   } satisfies Linter.FlatConfig;
 };

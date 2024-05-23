@@ -18,26 +18,18 @@ ESLint flat config for ignoring files listed in .gitignore.
 # Usage
 
 ```ts
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
 import eslint from "@eslint/js";
 import prettier from "eslint-config-prettier";
 import { gitignore } from "eslint-flat-config-gitignore";
 import tsESLint from "typescript-eslint";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 export default tsESLint.config(
-  await gitignore(__dirname),
+  await gitignore(import.meta.dirname),
   eslint.configs.recommended,
   {
     files: ["**/*.{ts,tsx,cts,mts}"],
     extends: [...tsESLint.configs.recommendedTypeChecked, ...tsESLint.configs.stylisticTypeChecked],
-    languageOptions: {
-      parserOptions: { project: true, tsConfigRootDir: __dirname },
-    },
+    languageOptions: { parserOptions: { project: true, tsConfigRootDir: import.meta.dirname } },
     rules: {
       "@typescript-eslint/consistent-type-exports": "error",
       "@typescript-eslint/consistent-type-imports": "error",

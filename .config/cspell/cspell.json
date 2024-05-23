@@ -2,18 +2,6 @@
   "version": "0.2",
   "enableGlobDot": true,
   "useGitignore": true,
-  "words": [
-    "Codecov",
-    "devcontainer",
-    "devcontainers",
-    "execa",
-    "gdlol",
-    "memfs",
-    "npmjs",
-    "packagejson",
-    "pnpmfile",
-    "rsort",
-    "syncpack",
-    "usermod"
-  ]
+  "ignorePaths": ["**/node_modules/**", "LICENSE"],
+  "words": ["Codecov", "devcontainer", "devcontainers", "execa", "memfs", "npmjs", "packagejson", "rsort", "syncpack"]
 }

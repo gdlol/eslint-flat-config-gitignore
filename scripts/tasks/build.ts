@@ -1,10 +1,10 @@
-import fs from "node:fs";
+import fs from "node:fs/promises";
 import { copyFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import git from "isomorphic-git";
 import * as prettier from "prettier";
-import semverRsort from "semver/functions/rsort.js";
+import semver from "semver";
 import type { PackageJson } from "type-fest";
 
 import prettierOptions from "@/.config/prettier/.prettierrc.json";
@@ -23,7 +23,7 @@ const writePackageJson = async () => {
   const tags = await git.listTags({ fs, dir: projectRoot });
   const url = (await git.listRemotes({ fs, dir: projectRoot })).at(0)?.url;
   const pkgJson: PackageJson = Object.assign({}, pkg as PackageJson, {
-    version: semverRsort(tags)[0],
+    version: semver.rsort(tags).at(0),
     repository: url && { type: "git", url },
     license,
     exports: {
