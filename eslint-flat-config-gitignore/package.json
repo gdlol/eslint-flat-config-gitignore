@@ -1,5 +1,6 @@
 {
   "name": "eslint-flat-config-gitignore",
+  "version": "0.0.0",
   "description": "ESLint flat config for ignoring files listed in .gitignore",
   "keywords": [
     "eslint",
@@ -22,7 +23,7 @@
     "ignore": "^5.3.1"
   },
   "devDependencies": {
-    "@types/node": "^20.11.30"
+    "@types/node": "^20.12.12"
   },
   "engines": {
     "node": ">=20"
