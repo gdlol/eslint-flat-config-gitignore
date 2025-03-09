@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [tsconfigPaths()],
   test: {
     coverage: {
-      include: ["eslint-flat-config-gitignore/**"],
+      include: ["eslint-flat-config-gitignore/**/*.ts"],
     },
   },
 });

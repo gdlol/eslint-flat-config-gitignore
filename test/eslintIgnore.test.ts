@@ -1,5 +1,5 @@
 import dedent from "dedent";
-import { FlatESLint } from "eslint/use-at-your-own-risk";
+import { ESLint } from "eslint";
 import { gitignore } from "eslint-flat-config-gitignore";
 import { vol } from "memfs";
 import { afterEach, expect, test, vi } from "vitest";
@@ -24,7 +24,7 @@ const gitignoreFile = dedent`
 afterEach(() => vol.reset());
 
 test("default", async () => {
-  const eslint = new FlatESLint({
+  const eslint = new ESLint({
     cwd: "/path/to/project",
     overrideConfig: [],
     overrideConfigFile: true,
@@ -49,7 +49,7 @@ test("default", async () => {
 test("gitignore", async () => {
   vol.fromJSON({ "/path/to/project/.gitignore": gitignoreFile }, "/path/to/project");
 
-  const eslint = new FlatESLint({
+  const eslint = new ESLint({
     cwd: "/path/to/project",
     overrideConfig: [await gitignore("/path/to/project")],
     overrideConfigFile: true,
