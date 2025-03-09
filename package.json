@@ -11,8 +11,7 @@
     "publish": "pnpm node scripts/publish.ts",
     "restore": "pnpm node scripts/restore.ts",
     "test": "pnpm node scripts/test.ts",
-    "update": "pnpm node scripts/update.ts",
-    "watch": "pnpm node scripts/watch.ts"
+    "update": "pnpm node scripts/update.ts"
   },
   "dependencies": {
     "@commander-js/extra-typings": "^13.1.0",
@@ -35,6 +34,7 @@
     "glob": "^11.0.1",
     "globals": "^16.0.0",
     "isomorphic-git": "^1.29.0",
+    "jiti": "^2.4.2",
     "prettier": "^3.5.3",
     "prettier-plugin-packagejson": "^2.5.10",
     "rimraf": "^6.0.1",

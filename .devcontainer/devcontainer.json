@@ -43,6 +43,5 @@
       }
     }
   },
-  "onCreateCommand": "pnpm install && pnpm restore || true",
-  "postAttachCommand": "pnpm watch --detach"
+  "onCreateCommand": "pnpm install && pnpm restore || true"
 }
