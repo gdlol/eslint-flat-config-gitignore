@@ -2,6 +2,7 @@ import eslint from "@eslint/js";
 import vitest from "@vitest/eslint-plugin";
 import prettier from "eslint-config-prettier";
 import { gitignore } from "eslint-flat-config-gitignore";
+import importPlugin from "eslint-plugin-import";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import eslintPluginUnicorn from "eslint-plugin-unicorn";
 import tsESLint from "typescript-eslint";
@@ -30,8 +31,10 @@ export default tsESLint.config(
     plugins: {
       "simple-import-sort": simpleImportSort,
       unicorn: eslintPluginUnicorn,
+      import: importPlugin,
     },
     rules: {
+      "import/no-extraneous-dependencies": "error",
       "simple-import-sort/exports": "error",
       "simple-import-sort/imports": "error",
       "unicorn/prefer-node-protocol": "error",
