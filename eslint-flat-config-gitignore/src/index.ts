@@ -6,7 +6,7 @@ import ignore from "ignore";
 
 const createIgnoreFunction = async (dirname: string, filename: string) => {
   const ignoreFile = await readFile(path.resolve(dirname, filename), "utf-8");
-  const ig = ignore.default().add(ignoreFile);
+  const ig = ignore().add(ignoreFile);
   return (filePath: string): boolean => {
     let relativePath = path.relative(dirname, filePath).replace(/\\/g, "/");
     filePath = filePath.replace(/\\/g, "/");
@@ -29,5 +29,5 @@ export const gitignore = async (dirname: string, filename = ".gitignore") => {
   return {
     // TODO: Explore possible options if this no longer works.
     ignores: [await createIgnoreFunction(dirname, filename)] as unknown as string[],
-  } satisfies Linter.FlatConfig;
+  } satisfies Linter.Config;
 };

@@ -7,9 +7,9 @@ import * as prettier from "prettier";
 import semver from "semver";
 import type { PackageJson } from "type-fest";
 
-import prettierOptions from "@/.config/prettier/.prettierrc.json";
-import pkg from "@/eslint-flat-config-gitignore/package.json";
-import { license } from "@/package.json";
+import prettierOptions from "@/.config/prettier/.prettierrc.json" with { type: "json" };
+import pkg from "@/eslint-flat-config-gitignore/package.json" with { type: "json" };
+import project from "@/package.json" with { type: "json" };
 import { projectRoot } from "@/scripts/project.js";
 import { $$ } from "@/scripts/shell.js";
 
@@ -25,7 +25,7 @@ const writePackageJson = async () => {
   const pkgJson: PackageJson = Object.assign({}, pkg as PackageJson, {
     version: semver.rsort(tags).at(0),
     repository: url && { type: "git", url },
-    license,
+    license: project.license,
     exports: {
       types: "./index.d.ts",
       import: "./index.js",
