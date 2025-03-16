@@ -1,14 +1,14 @@
 // spell-checker:ignore esbenp azuretools dbaeumer
 {
   "name": "eslint-flat-config-gitignore",
-  "dockerComposeFile": "docker-compose.yml",
+  "dockerComposeFile": "compose.yaml",
   "service": "devcontainer",
   "remoteUser": "dev",
   "overrideCommand": true,
   "workspaceFolder": "/workspaces/eslint-flat-config-gitignore",
   "features": {
     "ghcr.io/devcontainer-config/features/user-init:2": {},
-    "ghcr.io/devcontainer-config/features/dot-config:2": {}
+    "ghcr.io/devcontainer-config/features/dot-config:3": {}
   },
   "customizations": {
     "vscode": {

@@ -19,7 +19,7 @@
     "@eslint/js": "^9.22.0",
     "@tsconfig/node22": "^22.0.0",
     "@vitest/coverage-v8": "^3.0.8",
-    "@vitest/eslint-plugin": "^1.1.36",
+    "@vitest/eslint-plugin": "^1.1.37",
     "commander": "~13.1.0",
     "cspell": "^8.17.5",
     "eslint": "^9.22.0",
@@ -37,11 +37,11 @@
     "prettier-plugin-packagejson": "^2.5.10",
     "rimraf": "^6.0.1",
     "semver": "^7.7.1",
-    "syncpack": "^13.0.2",
+    "syncpack": "^13.0.3",
     "type-fest": "^4.37.0",
     "typescript": "^5.8.2",
-    "typescript-eslint": "^8.26.0",
-    "vite": "^6.2.1",
+    "typescript-eslint": "^8.26.1",
+    "vite": "^6.2.2",
     "vite-node": "^3.0.8",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.8"
@@ -53,5 +53,10 @@
     "@types/node": "^22.13.10",
     "@types/semver": "^7.5.8",
     "jiti": "^2.4.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "syncpack>@effect/schema": "npm:effect@^3.13.11"
+    }
   }
 }
