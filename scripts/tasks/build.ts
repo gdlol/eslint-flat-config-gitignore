@@ -24,7 +24,7 @@ const writePackageJson = async () => {
   const url = (await git.listRemotes({ fs, dir: projectRoot })).at(0)?.url;
   const pkgJson: PackageJson = Object.assign({}, pkg as PackageJson, {
     version: semver.rsort(tags).at(0),
-    repository: url && { type: "git", url },
+    repository: url && { type: "git", url: "git+" + url },
     license: project.license,
     exports: {
       types: "./index.d.ts",
