@@ -15,6 +15,6 @@ const projectSlug = process.env.PROJECT_SLUG ?? "local/local";
 
 await $$`codecovcli --verbose --auto-load-params-from ${ciProvider} upload-process \
   --commit-sha ${commitHash} \
-  --project-slug ${projectSlug} \
+  --slug ${projectSlug} \
   --disable-search --fail-on-error \
   --file ${coverageFilePath}`;
