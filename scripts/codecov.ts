@@ -10,11 +10,12 @@ const commitHash = await git.resolveRef({ fs, dir: projectRoot, ref: "HEAD" });
 
 const coverageFilePath = path.resolve(projectRoot, "coverage/clover.xml");
 
-const ciProvider = process.env.CI_PROVIDER ?? "local";
+const repoProvider = process.env.REPO_PROVIDER ?? "local";
 const projectSlug = process.env.PROJECT_SLUG ?? "local/local";
 
-await $$`codecovcli --verbose --auto-load-params-from ${ciProvider} upload-process \
-  --commit-sha ${commitHash} \
+await $$`codecovcli --verbose upload-process \
+  --git-service ${repoProvider} \
   --slug ${projectSlug} \
+  --commit-sha ${commitHash} \
   --disable-search --fail-on-error \
   --file ${coverageFilePath}`;
