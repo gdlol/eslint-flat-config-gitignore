@@ -70,3 +70,36 @@ test("gitignore", async () => {
   expect(await eslint.isPathIgnored("/path/to/project/package/.git/file.js")).toBe(true);
   expect(await eslint.isPathIgnored("/path/to/project/package/lib/.file.js")).toBe(true);
 });
+
+test("gitignore2", async () => {
+  vol.fromJSON({ "/path/to/project/.gitignore2": gitignoreFile }, "/path/to/project");
+
+  const eslint = new ESLint({
+    cwd: "/path/to/project",
+    overrideConfig: [await gitignore("/path/to/project", ".gitignore2")],
+    overrideConfigFile: true,
+  });
+  expect(await eslint.isPathIgnored("/some/path/file.txt")).toBe(true);
+  expect(await eslint.isPathIgnored("/path/to/project/file.js")).toBe(false);
+  expect(await eslint.isPathIgnored("/path/to/project/file.txt")).toBe(true);
+  expect(await eslint.isPathIgnored("/path/to/project/node_modules/file.js")).toBe(true);
+  expect(await eslint.isPathIgnored("/path/to/project/.env")).toBe(true);
+  expect(await eslint.isPathIgnored("/path/to/project/.eslintrc.js")).toBe(true);
+  expect(await eslint.isPathIgnored("/path/to/project/.git/file.js")).toBe(true);
+  expect(await eslint.isPathIgnored("/path/to/project/.config/file.js")).toBe(false);
+  expect(await eslint.isPathIgnored("/path/to/project/.config/.eslintrc.js")).toBe(false);
+  expect(await eslint.isPathIgnored("/path/to/project/.config/eslint/.eslintrc.js")).toBe(false);
+  expect(await eslint.isPathIgnored("/path/to/project/dist/file.js")).toBe(true);
+  expect(await eslint.isPathIgnored("/path/to/project/package/.config/file.js")).toBe(false);
+  expect(await eslint.isPathIgnored("/path/to/project/package/.config/eslint/.eslintrc.js")).toBe(false);
+  expect(await eslint.isPathIgnored("/path/to/project/package/.git/file.js")).toBe(true);
+  expect(await eslint.isPathIgnored("/path/to/project/package/lib/.file.js")).toBe(true);
+});
+
+test("unreachable", async () => {
+  vol.fromJSON({ "/path/to/project/.gitignore": gitignoreFile }, "/path/to/project");
+
+  const { ignores } = await gitignore("/path/to/project");
+  const ignoreFunction = ignores[0] as unknown as (filePath: string) => boolean;
+  expect(ignoreFunction("/path/to/project")).toBe(false);
+});

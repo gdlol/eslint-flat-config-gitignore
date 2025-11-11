@@ -8,7 +8,8 @@
   "workspaceFolder": "/workspaces/eslint-flat-config-gitignore",
   "features": {
     "ghcr.io/devcontainer-config/features/user-init:2": {},
-    "ghcr.io/devcontainer-config/features/dot-config:3": {}
+    "ghcr.io/devcontainer-config/features/dot-config:3": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
   "customizations": {
     "vscode": {
@@ -17,7 +18,8 @@
         "ms-azuretools.vscode-docker",
         "streetsidesoftware.code-spell-checker",
         "dbaeumer.vscode-eslint",
-        "vitest.explorer"
+        "vitest.explorer",
+        "github.vscode-github-actions"
       ],
       "settings": {
         "files.associations": {
@@ -28,7 +30,7 @@
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "[dockerfile]": {
-          "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+          "editor.defaultFormatter": "ms-azuretools.vscode-containers"
         },
         "cSpell.autoFormatConfigFile": true,
         "cSpell.checkOnlyEnabledFileTypes": false,
