@@ -6,7 +6,6 @@ skip_tags: true
 image: Ubuntu2004
 environment:
   CODECOV_TOKEN: CODECOV_TOKEN
-  REPO_PROVIDER: REPO_PROVIDER
 build_script:
   - sh: >-
       set -e
