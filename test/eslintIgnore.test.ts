@@ -70,3 +70,11 @@ test("gitignore", async () => {
   expect(await eslint.isPathIgnored("/path/to/project/package/.git/file.js")).toBe(true);
   expect(await eslint.isPathIgnored("/path/to/project/package/lib/.file.js")).toBe(true);
 });
+
+test("unreachable", async () => {
+  vol.fromJSON({ "/path/to/project/.gitignore": gitignoreFile }, "/path/to/project");
+
+  const { ignores } = await gitignore("/path/to/project");
+  const ignoreFunction = ignores[0] as unknown as (filePath: string) => boolean;
+  expect(ignoreFunction("/path/to/project")).toBe(false);
+});
