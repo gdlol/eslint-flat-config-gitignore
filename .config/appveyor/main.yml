@@ -25,6 +25,6 @@ test_script:
 
       devcontainer exec --workspace-folder . \
         --remote-env CI_PROVIDER=appveyor \
-        --remote-env PROJECT_SLUG=${APPVEYOR_PROJECT_SLUG} \
+        --remote-env PROJECT_SLUG=${APPVEYOR_REPO_NAME} \
         --remote-env CODECOV_TOKEN=${CODECOV_TOKEN} \
         pnpm codecov
