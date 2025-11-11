@@ -4,16 +4,5 @@
   "useGitignore": true,
   "gitignoreRoot": ".",
   "ignorePaths": ["LICENSE"],
-  "words": [
-    "Codecov",
-    "codecovcli",
-    "devcontainer",
-    "devcontainers",
-    "execa",
-    "memfs",
-    "npmjs",
-    "packagejson",
-    "rsort",
-    "syncpack"
-  ]
+  "words": ["devcontainer", "devcontainers", "execa", "memfs", "npmjs", "packagejson", "rsort", "syncpack"]
 }

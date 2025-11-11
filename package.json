@@ -4,7 +4,6 @@
   "type": "module",
   "scripts": {
     "build": "vite-node scripts/build.ts",
-    "codecov": "vite-node scripts/codecov.ts",
     "fix": "vite-node scripts/fix.ts",
     "lint": "vite-node scripts/lint.ts",
     "publish": "vite-node scripts/publish.ts",
