@@ -2,14 +2,14 @@
 
 [NPM Badge]: https://img.shields.io/npm/v/eslint-flat-config-gitignore
 [NPM URL]: https://www.npmjs.com/package/eslint-flat-config-gitignore
-[AppVeyor Badge]: https://img.shields.io/appveyor/build/gdlol/eslint-flat-config-gitignore/main
-[AppVeyor URL]: https://ci.appveyor.com/project/gdlol/eslint-flat-config-gitignore/branch/main
-[Codecov Badge]: https://img.shields.io/codecov/c/github/gdlol/eslint-flat-config-gitignore/main
-[Codecov URL]: https://app.codecov.io/gh/gdlol/eslint-flat-config-gitignore/tree/main
+[CI Badge]: https://img.shields.io/github/actions/workflow/status/gdlol/eslint-flat-config-gitignore/.github%2Fworkflows%2Fmain.yml
+[CI URL]: https://github.com/gdlol/eslint-flat-config-gitignore/actions/workflows/main.yml
+[Codecov Badge]: https://img.shields.io/codecov/c/github/gdlol/eslint-flat-config-gitignore
+[Codecov URL]: https://app.codecov.io/gh/gdlol/eslint-flat-config-gitignore
 [License Badge]: https://img.shields.io/github/license/gdlol/eslint-flat-config-gitignore
 
 [![NPM Badge][NPM Badge]][NPM URL]
-[![AppVeyor Badge][AppVeyor Badge]][AppVeyor URL]
+[![CI Badge][CI Badge]][CI URL]
 [![Codecov Badge][Codecov Badge]][Codecov URL]
 [![License Badge][License Badge]](LICENSE)
 
