@@ -19,11 +19,12 @@ ESLint flat config for ignoring files listed in .gitignore.
 
 ```ts
 import eslint from "@eslint/js";
+import { defineConfig } from "eslint/config";
 import prettier from "eslint-config-prettier";
 import { gitignore } from "eslint-flat-config-gitignore";
 import tsESLint from "typescript-eslint";
 
-export default tsESLint.config(
+export default defineConfig(
   await gitignore(import.meta.dirname),
   eslint.configs.recommended,
   {
