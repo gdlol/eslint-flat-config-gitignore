@@ -24,8 +24,4 @@ test_script:
 
       devcontainer exec --workspace-folder . --remote-env CI=true pnpm test
 
-      devcontainer exec --workspace-folder . \
-        --remote-env REPO_PROVIDER=${REPO_PROVIDER} \
-        --remote-env PROJECT_SLUG=${APPVEYOR_REPO_NAME} \
-        --remote-env CODECOV_TOKEN=${CODECOV_TOKEN} \
-        pnpm codecov
+      devcontainer exec --workspace-folder . --remote-env CODECOV_TOKEN=${CODECOV_TOKEN} pnpm codecov
