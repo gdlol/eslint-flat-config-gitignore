@@ -13,7 +13,7 @@
 [![Codecov Badge][Codecov Badge]][Codecov URL]
 [![License Badge][License Badge]](LICENSE)
 
-ESLint flat config for ignoring files listed in .gitignore.
+High fidelity ESLint flat config for ignoring files listed in .gitignore.
 
 # Usage
 
