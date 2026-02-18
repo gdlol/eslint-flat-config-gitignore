@@ -47,4 +47,5 @@ export const build = async () => {
   await compile();
   await writePackageJson();
   await copyFiles("ReadMe.md", "LICENSE");
+  await writeFile(path.resolve(dist, ".npmrc"), "");
 };
