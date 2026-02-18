@@ -34,6 +34,5 @@ export const buildPublisher = async () => {
   await writeFile(path.resolve(tempPath, "pnpm-workspace.yaml"), "");
   await $$`pnpm install`;
   await $$`pnpm deploy --filter=${name} --prod ${publisherPath}`;
-  await $$`pnpm install --global ${publisherPath}`;
   await $$`rm --recursive ${tempPath}`;
 };
