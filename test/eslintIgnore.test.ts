@@ -5,8 +5,8 @@ import { vol } from "memfs";
 import { afterEach, expect, test, vi } from "vitest";
 
 const fs = await vi.hoisted(async () => (await import("memfs")).fs);
-vi.mock("node:fs", () => fs);
-vi.mock("node:fs/promises", () => fs.promises);
+vi.mock("node:fs", () => ({ ...fs, default: fs }));
+vi.mock("node:fs/promises", () => ({ ...fs.promises, default: fs.promises }));
 
 const gitignoreFile = dedent`
   .*
@@ -17,8 +17,11 @@ const gitignoreFile = dedent`
   !**/.config/**
 
   node_modules/
+
   dist/
   coverage/
+  artifacts/
+  !.github/
   `;
 
 afterEach(() => vol.reset());

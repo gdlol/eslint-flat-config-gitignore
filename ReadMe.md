@@ -40,4 +40,7 @@ export default defineConfig(
 );
 ```
 
-[Example in this repo](.config/eslint/eslint.config.ts)
+Example in this repo:
+
+- [.config/eslint/config.ts](.config/eslint/config.ts)
+- [.devcontainer/dot-config.json](.devcontainer/dot-config.json)
