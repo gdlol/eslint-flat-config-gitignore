@@ -28,7 +28,7 @@ jobs:
           imageName: ghcr.io/${{ env.GITHUB_REPOSITORY }}/devcontainer
           cacheFrom: ghcr.io/${{ env.GITHUB_REPOSITORY }}/devcontainer
           push: never
-          runCmd: pnpm run prepare-publish
+          runCmd: pnpm prepare-publish
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v6
