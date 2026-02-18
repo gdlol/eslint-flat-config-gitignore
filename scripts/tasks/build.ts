@@ -13,7 +13,7 @@ import project from "@/package.json" with { type: "json" };
 import { projectRoot } from "@/scripts/project.js";
 import { $$ } from "@/scripts/shell.js";
 
-const dist = path.resolve(projectRoot, pkg.name, "dist");
+export const dist = path.resolve(projectRoot, pkg.name, "dist");
 
 const clean = () => rm(dist, { recursive: true, force: true });
 
