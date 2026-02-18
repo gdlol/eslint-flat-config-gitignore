@@ -24,7 +24,11 @@ const getRemoteUrl = async () => {
   if (!remote) {
     throw new Error("No git remote found");
   }
-  return remote;
+  if (!remote.endsWith(".git")) {
+    return remote + ".git";
+  } else {
+    return remote;
+  }
 };
 
 const writePackageJson = async () => {
