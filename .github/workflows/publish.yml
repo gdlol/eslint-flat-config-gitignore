@@ -12,7 +12,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     env:
       GITHUB_REPOSITORY: ${{ github.repository }}
@@ -22,7 +22,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Build
+      - name: Prepare publish
         uses: devcontainers/ci@v0.3
         with:
           imageName: ghcr.io/${{ env.GITHUB_REPOSITORY }}/devcontainer
@@ -30,27 +30,11 @@ jobs:
           push: never
           runCmd: pnpm prepare-publish
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v6
-        with:
-          name: artifacts
-          path: artifacts
-          include-hidden-files: true
-
-  publish:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/setup-node@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
         with:
           node-version: "24"
           registry-url: "https://registry.npmjs.org"
-
-      - name: Download Artifact
-        uses: actions/download-artifact@v7
-        with:
-          name: artifacts
-          path: artifacts
 
       - name: Publish
         run: node artifacts/publisher/index.js
