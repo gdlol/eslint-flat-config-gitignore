@@ -28,5 +28,9 @@ jobs:
           imageName: ghcr.io/${{ env.GITHUB_REPOSITORY }}/devcontainer
           cacheFrom: ghcr.io/${{ env.GITHUB_REPOSITORY }}/devcontainer
           push: never
-          inheritEnv: true
           runCmd: pnpm run publish
+          env: |
+            NPM_ID_TOKEN
+            GITHUB_ACTIONS
+            ACTIONS_ID_TOKEN_REQUEST_URL
+            ACTIONS_ID_TOKEN_REQUEST_TOKEN
