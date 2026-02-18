@@ -19,9 +19,20 @@ const clean = () => rm(dist, { recursive: true, force: true });
 
 const compile = () => $$`tsc --project ${path.resolve(projectRoot, pkg.name, "tsconfig.json")}`;
 
+const getRemoteUrl = async () => {
+  let remote = (await git.listRemotes({ fs, dir: projectRoot })).at(0)?.url;
+  if (!remote) {
+    throw new Error("No git remote found");
+  }
+  if (!remote.endsWith(".git")) {
+    remote += ".git";
+  }
+  return remote;
+};
+
 const writePackageJson = async () => {
   const tags = await git.listTags({ fs, dir: projectRoot });
-  const url = (await git.listRemotes({ fs, dir: projectRoot })).at(0)?.url;
+  const url = await getRemoteUrl();
   const pkgJson: PackageJson = Object.assign({}, pkg as PackageJson, {
     version: semver.rsort(tags).at(0),
     repository: url && { type: "git", url: "git+" + url },
