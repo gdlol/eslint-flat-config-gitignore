@@ -6,7 +6,7 @@
     "build": "vite-node scripts/build.ts",
     "fix": "vite-node scripts/fix.ts",
     "lint": "vite-node scripts/lint.ts",
-    "publish": "vite-node scripts/publish.ts",
+    "prepare-publish": "vite-node scripts/preparePublish.ts",
     "restore": "vite-node scripts/restore.ts",
     "test": "vite-node scripts/test.ts",
     "update": "vite-node scripts/update.ts"
