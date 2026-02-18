@@ -27,6 +27,8 @@ export const buildPublisher = async () => {
       NODE_ENV: "production",
       npm_config_inject_workspace_packages: "true",
       npm_config_shared_workspace_lockfile: "false",
+      npm_config_node_linker: "pnp",
+      npm_config_symlink: "false",
     },
   });
   await $$`tsc --project ${path.resolve(publisherProjectPath, "tsconfig.json")} --outDir .`;
