@@ -17,15 +17,12 @@ export const dist = path.resolve(projectRoot, pkg.name, "dist");
 
 const clean = () => rm(dist, { recursive: true, force: true });
 
-const compile = () => $$`tsc --project ${path.resolve(projectRoot, pkg.name, "tsconfig.json")}`;
+const compile = () => $$`tsc --project ${path.resolve(projectRoot, pkg.name, "tsconfig.json")} --outDir ${dist}`;
 
 const getRemoteUrl = async () => {
-  let remote = (await git.listRemotes({ fs, dir: projectRoot })).at(0)?.url;
+  const remote = (await git.listRemotes({ fs, dir: projectRoot })).at(0)?.url;
   if (!remote) {
     throw new Error("No git remote found");
-  }
-  if (!remote.endsWith(".git")) {
-    remote += ".git";
   }
   return remote;
 };
@@ -58,5 +55,4 @@ export const build = async () => {
   await compile();
   await writePackageJson();
   await copyFiles("ReadMe.md", "LICENSE");
-  await writeFile(path.resolve(dist, ".npmrc"), "");
 };
