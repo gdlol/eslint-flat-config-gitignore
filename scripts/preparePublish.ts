@@ -9,5 +9,5 @@ await buildPublisher();
 const artifactsPath = path.resolve(projectRoot, "artifacts");
 await rm(artifactsPath, { recursive: true, force: true });
 await mkdir(artifactsPath, { recursive: true });
-await cp(dist, path.resolve(artifactsPath, "dist"), { recursive: true });
-await cp(publisherPath, path.resolve(artifactsPath, "publisher"), { recursive: true });
+await cp(dist, path.resolve(artifactsPath, "dist"), { recursive: true, verbatimSymlinks: true });
+await cp(publisherPath, path.resolve(artifactsPath, "publisher"), { recursive: true, verbatimSymlinks: true });
