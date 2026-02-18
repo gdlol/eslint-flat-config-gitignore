@@ -2,8 +2,8 @@
 
 [NPM Badge]: https://img.shields.io/npm/v/eslint-flat-config-gitignore
 [NPM URL]: https://www.npmjs.com/package/eslint-flat-config-gitignore
-[CI Badge]: https://img.shields.io/github/actions/workflow/status/gdlol/eslint-flat-config-gitignore/.github%2Fworkflows%2Fmain.yml
-[CI URL]: https://github.com/gdlol/eslint-flat-config-gitignore/actions/workflows/main.yml
+[CI Badge]: https://img.shields.io/github/actions/workflow/status/gdlol/eslint-flat-config-gitignore/main.yml?branch=main
+[CI URL]: https://github.com/gdlol/eslint-flat-config-gitignore/actions/workflows/main.yml?query=branch%3Amain
 [Codecov Badge]: https://img.shields.io/codecov/c/github/gdlol/eslint-flat-config-gitignore
 [Codecov URL]: https://app.codecov.io/gh/gdlol/eslint-flat-config-gitignore
 [License Badge]: https://img.shields.io/github/license/gdlol/eslint-flat-config-gitignore

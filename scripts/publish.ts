@@ -17,6 +17,10 @@ const isDefaultBranch = async () => {
 };
 
 const pkgJsonPath = path.resolve(dist, "package.json");
+// Debug
+console.log(`Reading package.json from: ${pkgJsonPath}`);
+console.log(await readFile(pkgJsonPath, "utf-8"));
+
 const pkgJson = JSON.parse(await readFile(pkgJsonPath, "utf-8")) as PackageJson;
 if (!pkgJson.version) {
   throw new Error("Version not found in package.json");
